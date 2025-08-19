@@ -1,6 +1,6 @@
 # 📚 Bahria University Lab Code Repository
+Welcome! This repository is my academic archive for all laboratory assignments and coding exercises from my Bachelor of Science in Computer Science (BSCS) program at Bahria University Karachi. It showcases my hands-on learning and development.
 
-Welcome! This repository serves as my growing academic coding archive, a centralized collection of every laboratory assignment and coding exercise from my Bachelor of Science in Computer Science (BSCS) program at Bahria University Karachi. It reflects my continuous hands-on learning and development in the field.
 ---
 
 ## 🎯 **Purpose of This Repository:**
@@ -17,29 +17,18 @@ Welcome! This repository serves as my growing academic coding archive, a central
 This repository is organized by course or by semester, with subdirectories for specific labs or assignments. Each lab typically includes:
 
 * **`[Language]`** (e.g., `Python`, `C++`, `Java`): The primary programming language used.
-* **`[Lab_Name]`** or **`[Assignment_Number]`**: Specific folders for each lab.
+* **`[Lab_Number]`** and **`[Assignment_Number]`**: Specific folders for each lab.
 * **`README.md`**: A brief description of the lab's objective, key concepts, and solution details (where appropriate).
 * **Source Code Files**: The `.cpp`, `.java`, `.py`, etc., files.
-
----
-
-## 🚀 **Technologies & Languages Covered (and growing!):**
-
-* **C++:** Fundamental programming, data structures, algorithms.
-* **Java:** Object-Oriented Programming, data structures, application development.
-* **Python:** Scripting, data analysis, algorithms.
-* **HTML & CSS:** Web structuring and styling.
-
 ---
 
 ## 🌱 **Learning in Public:**
-
-This repository is a core part of my "learning in public" philosophy. Feel free to explore the code, provide feedback, or even suggest alternative approaches. Your insights are always welcome as I continue to hone my analytical, problem-solving, and technical skills on my journey to becoming a Data Scientist.
+This repository is a core part of my "learning in public" philosophy. Feel free to explore the code, provide feedback, or even suggest alternative approaches. Your insights are always welcome as I continue to hone my analytical, problem-solving, and technical skills on my journey.
 
 ---
 
 ## 📬 **Connect with Me:**
 
-If you have questions about any of the labs, or just want to connect, feel free to reach out!  [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/NaveedAmarGuriro)
+If you have questions about any of the labs, or just want to connect, feel free to reach out!  [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/naveedamarguriro/)
 
 ---
