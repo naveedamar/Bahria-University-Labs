@@ -1,34 +1,6 @@
-# 📚 Bahria University Lab Code Repository
-Welcome! This repository is my academic archive for all laboratory assignments and coding exercises from my Bachelor of Science in Computer Science (BSCS) program at Bahria University Karachi. It showcases my hands-on learning and development.
+# 📚 Introduction to Information & Communication Technology (ICT)
 
----
+My primary focus throughout this course was on understanding theoretical concepts of computing, networking, and data management, as well as mastering practical applications within Microsoft Office. This repository reflects my hands-on learning, specifically showcasing the front-end labs I completed.
 
-## 🎯 **Purpose of This Repository:**
-
-* **Learning & Documentation:** To systematically organize and document my practical learning experience throughout my Computer Science degree.
-* **Progress Tracking:** To track my coding progress and skill development across different programming paradigms and problem sets.
-* **Public Learning:** To serve as a public record of my hands-on work, demonstrating my understanding of core CS concepts and problem-solving abilities.
-* **Reference & Review:** A personal reference point for revisiting concepts and code for future projects or studies.
-
----
-
-## 📁 **Repository Structure:**
-
-This repository is organized by course or by semester, with subdirectories for specific labs or assignments. Each lab typically includes:
-
-* **`[Language]`** (e.g., `Python`, `C++`, `Java`): The primary programming language used.
-* **`[Lab_Number]`** and **`[Assignment_Number]`**: Specific folders for each lab.
-* **`README.md`**: A brief description of the lab's objective, key concepts, and solution details (where appropriate).
-* **Source Code Files**: The `.cpp`, `.java`, `.py`, etc., files.
----
-
-## 🌱 **Learning in Public:**
-This repository is a core part of my "learning in public" philosophy. Feel free to explore the code, provide feedback, or even suggest alternative approaches. Your insights are always welcome as I continue to hone my analytical, problem-solving, and technical skills on my journey.
-
----
-
-## 📬 **Connect with Me:**
-
-If you have questions about any of the labs, or just want to connect, feel free to reach out!  [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/naveedamarguriro/)
-
----
+## 📁 Repository Contents
+This repository contains all my practical work in HTML and CSS. You will find simple front-end projects and labs that demonstrate my foundational understanding of web structuring and styling.
