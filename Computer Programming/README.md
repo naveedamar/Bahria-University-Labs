@@ -1,0 +1,1 @@
+This folder contains all my laboratory assignments and projects from my Computer Programming course. It serves as a record of my hands-on learning, covering fundamental concepts and problem-solving in C++.
