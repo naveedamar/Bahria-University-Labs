@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Naveed\\OneDrive - Higher Education Commission\\3rd \u0026 4th SEM\\Bahria-University-Labs\\Database Management Systems\\BAHRIA-DBMS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{37E8B505-545F-494E-B411-A6F9A8845082}|BAHRIA-DBMS\\BAHRIA-DBMS.ssmssqlproj|C:\\Users\\Naveed\\OneDrive - Higher Education Commission\\3rd \u0026 4th SEM\\Bahria-University-Labs\\Database Management Systems\\BAHRIA-DBMS\\Student_DataSet.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{37E8B505-545F-494E-B411-A6F9A8845082}|BAHRIA-DBMS\\BAHRIA-DBMS.ssmssqlproj|solutionrelative:Student_DataSet.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Student_DataSet.sql -  [ReadOnly]SLIM-3\\SQLEXPRESS.stud-data (SLIM-3\\Naveed (52))",
+              "DocumentMoniker": "C:\\Users\\Naveed\\OneDrive - Higher Education Commission\\3rd \u0026 4th SEM\\Bahria-University-Labs\\Database Management Systems\\BAHRIA-DBMS\\Student_DataSet.sql",
+              "RelativeDocumentMoniker": "Student_DataSet.sql",
+              "ToolTip": "Student_DataSet.sql -  [ReadOnly]SLIM-3\\SQLEXPRESS.stud-data (SLIM-3\\Naveed (52))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-09-12T17:22:47.932Z",
+              "IsPinned": true,
+              "EditorCaption": " -  [ReadOnly]SLIM-3\\SQLEXPRESS.stud-data (SLIM-3\\Naveed (52))"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
