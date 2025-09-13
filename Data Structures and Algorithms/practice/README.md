@@ -1,7 +1,5 @@
 # 📊 Data Structures and Algorithms (DSA)
 
-This folder contains practice problems and selected programs from Princeton University's Coursera courses:
-* **Algorithms, Part I**
-* **Algorithms, Part II**
+This folder contains practice problems and selected programs from different resources that I am using for my learning.
 
-> **Note:** While the main DSA repository is configured with **C++** as the default language (to align with my university's curriculum), most files in this folder are implemented in **Java**. Since I am proficient in both C++ and Java, this directory primarily focuses on Java-based solutions.
+> **Note:** While the main DSA repository is set up with **C++** as the default language (to align with my university’s curriculum), many of the problems in this folder are implemented in **Python**. Since my university teaches DSA in C++, I practice in that language for coursework.
