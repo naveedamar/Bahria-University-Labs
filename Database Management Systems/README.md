@@ -7,3 +7,5 @@ The topics covered include:
 * **Database Fundamentals**: Relational models, schema design, and data normalization.
 * **SQL**: Data Definition Language (DDL) and Data Manipulation Language (DML) for querying and managing data.
 * **Database Management**: Transaction processing, concurrency control, and data integrity.
+
+> **Note:** 📂 The **Student_Information** dataset used for the labs is contained in the `Dataset/datasets` directory.
