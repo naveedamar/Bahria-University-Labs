@@ -1,6 +1,6 @@
 # 💾 Database Management Systems (DBMS)
 
-This repository contains all my lab assignments, and projects from my Database Management Systems course. It serves as a practical record of my learning and application of core database principles.
+This directory contains all my lab assignments, and projects from my Database Management Systems course. It serves as a practical record of my learning and application of core database principles.
 
 The topics covered include:
 

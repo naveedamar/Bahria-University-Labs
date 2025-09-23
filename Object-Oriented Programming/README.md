@@ -1,6 +1,6 @@
 # 🔒 Object-Oriented Programming (OOP) - Java Coursework
 
-This repository serves as a comprehensive archive of my practical coursework, including all lab assignments and projects from my Object-Oriented Programming course.
+This directory serves as a comprehensive archive of my practical coursework, including all lab assignments and projects from my Object-Oriented Programming course.
 
 It documents my hands-on learning and practical application of core OOP principles, including:
 
