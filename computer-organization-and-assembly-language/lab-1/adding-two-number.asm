@@ -1,0 +1,29 @@
+.STACK 100H
+.DATA
+RESULT DB ?
+.CODE
+
+MAIN PROC
+
+    MOV AX, @DATA
+    MOV DS, AX
+    MOV AH, 01H
+    INT 21H
+
+    SUB AL, 30H
+    MOV BL, AL
+    MOV AH, 01H
+    INT 21H
+
+    SUB AL, 30H
+    MOV BH, AL
+    ADD BL, BH
+    ADD BL, 30H
+    MOV DL, BL
+    MOV AH, 02H
+    INT 21H
+
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+END MAIN
