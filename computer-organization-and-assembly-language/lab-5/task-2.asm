@@ -1,0 +1,56 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    MSG1 DB 'Enter a digit (0-9): $'
+    EVEN_MSG DB 'Even$'
+    ODD_MSG DB 'Odd$'
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV DX, OFFSET MSG1
+    MOV AH, 09H
+    INT 21H
+
+    MOV AH, 01H
+    INT 21H
+    SUB AL, 30H       
+
+    MOV AH, 00H
+    MOV BL, 2
+    DIV BL            
+
+    CMP AH, 0
+    JNE ODD_LABEL      
+
+EVEN_LABEL:
+    MOV DL, 0DH
+    MOV AH, 02H
+    INT 21H
+    MOV DL, 0AH
+    MOV AH, 02H
+    INT 21H
+
+    MOV DX, OFFSET EVEN_MSG
+    MOV AH, 09H
+    INT 21H
+    JMP EXIT
+
+ODD_LABEL:
+    MOV DL, 0DH
+    MOV AH, 02H
+    INT 21H
+    MOV DL, 0AH
+    MOV AH, 02H
+    INT 21H
+
+    MOV DX, OFFSET ODD_MSG
+    MOV AH, 09H
+    INT 21H
+
+EXIT:
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+END MAIN
