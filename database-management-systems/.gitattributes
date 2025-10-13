@@ -1,2 +1,6 @@
-*.sql linguist-language=SQL
+# Enforcing LF line endings for SQL files
+*.sql text eol=lf
+
+# Ensuring GitHub linguist recognizes SQL files
 *.sql linguist-detectable=true
+*.sql linguist-language=SQL
