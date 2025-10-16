@@ -15,58 +15,65 @@ c. Display maximum and minimum exercise time taken by users
 d. Calculate average exercise minutes
  */
 
-
 #include <iostream>
-#include <map>
 using namespace std;
 
-int main() {
-
+int main()
+{
     int mins_exercise[10] = {12, 8, 17, 25, 5, 19, 6, 4, 21, 3};
 
-    //minutes output
-    cout << "Minutes Exercised: ";
-    for (int i = 0; i < 10; i++) {
-        cout << mins_exercise[i] << ", ";
-    }
-    cout << endl;
-
-
-    int pairs[5];
-    cout << "Pairs: ";
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            if (mins_exercise[i] + mins_exercise[j] == 25) {
-                for (auto pair : pairs) {
-                    continue;
-                }
+    // paris
+    cout << "Pairs of users whose exercise minutes sum to 25:\n";
+    for (int i = 0; i < 10; i++)
+    {
+        for (int j = i + 1; j < 10; j++)
+        {
+            if (mins_exercise[i] + mins_exercise[j] == 25)
+            {
+                cout << "User " << i << " (" << mins_exercise[i] << ") and User " << j << " (" << mins_exercise[j] <<
+                    ")\n";
             }
         }
     }
-    for (int i = 0; i < 10; i++) {
-        cout << pairs[i] << " ";
-    }
-    cout << endl;
 
-    //even odd
-    int even[5], odd[5];
-    for (int i = 0; i < 10; i++) {
-        if (mins_exercise[i] % 2 == 0) {
-            even[i] = mins_exercise[i];
-        }else {
-            odd[i] = mins_exercise[i];
+    // even or odd
+    int even_count = 0, odd_count = 0;
+    cout << "Even exercise minutes: ";
+    for (int i = 0; i < 10; i++)
+    {
+        if (mins_exercise[i] % 2 == 0)
+        {
+            cout << mins_exercise[i] << " ";
+            even_count++;
         }
     }
-
-    cout << "Even: ";
-    for (int i = 0; i < 5; i++) {
-        cout << even[i] << " ";
+    cout << "\nOdd exercise minutes: ";
+    for (int i = 0; i < 10; i++)
+    {
+        if (mins_exercise[i] % 2 != 0)
+        {
+            cout << mins_exercise[i] << " ";
+            odd_count++;
+        }
     }
-    cout << endl;
+    cout << "\nTotal even: " << even_count << ", Total odd: " << odd_count << endl;
 
-    cout << "Odd: ";
-    for (int i = 0; i < 5; i++) {
-        cout << odd[i] << " ";
+    // max & min
+    int max_time = mins_exercise[0], min_time = mins_exercise[0];
+    for (int i = 1; i < 10; i++)
+    {
+        if (mins_exercise[i] > max_time) max_time = mins_exercise[i];
+        if (mins_exercise[i] < min_time) min_time = mins_exercise[i];
     }
-    cout << endl;
+    cout << "Maximum exercise time: " << max_time << endl;
+    cout << "Minimum exercise time: " << min_time << endl;
+
+    // avg
+    int sum = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        sum += mins_exercise[i];
+    }
+    double average = sum / 10.0;
+    cout << "Average exercise minutes: " << average << endl;
 }
