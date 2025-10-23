@@ -1,0 +1,157 @@
+.MODEL SMALL          ;DEFINES MEMORY STACK
+.STACK 100H               ;256 BYTES OF STACK 
+.DATA
+    MSG1 DB 'ENTER FIRST NUMBER: $'
+    MSG2 DB 0DH,0AH,'ENTER SECOND NUMBER: $'  
+    MSGADD DB 0DH,0AH,'ADDITION RESULT: $'
+    MSGSUB DB 0DH,0AH,'SUBTRACTION RESULT: $'
+    MSGMUL DB 0DH,0AH,'MULTIPLICATION RESULT: $'
+    MSGDIV DB 0DH,0AH,'DIVISION RESULT: $'
+
+    NUM1 DB ?
+    NUM2 DB ?
+    RESULT DB ?
+    REMAINDER DB ?
+   
+.CODE
+MAIN PROC
+    MOV AX, @DATA      
+    MOV DS, AX     ; INTIALIZES DS     
+
+    ;FIRST INPUT FROM USER
+    LEA DX, MSG1           ;LOCATES ADDRESS OF MSG1 INTO DX
+    MOV AH, 09H            ; USED FOR STRING OUTPUT
+    INT 21H
+
+    MOV AH, 01H            ;CHAR INPUT
+    INT 21H
+    SUB AL, '0'            ;CONVERT ASCII TO NUMBER
+    MOV NUM1, AL 
+
+    ;SECOND INPUT FROM USER
+    LEA DX, MSG2           ;LOCATES ADDRESS OF MSG2 INTO DX
+    MOV AH, 09H            ; USED FOR STRING OUTPUT
+    INT 21H
+
+    MOV AH, 01H            ;CHAR INPUT
+    INT 21H
+    SUB AL, '0'            ;CONVERT ASCII TO NUMBER
+    MOV NUM2, AL 
+
+    ;ADDITION
+    LEA DX, MSGADD         ;DISPLAY ADDITION MESSAGE
+    MOV AH, 09H
+    INT 21H
+
+    MOV AL, NUM1
+    ADD AL, NUM2
+    ADD AL, '0'            ;CONVERT BACK TO ASCII
+    MOV DL, AL
+    MOV AH, 02H
+    INT 21H   
+
+    ;SUBTRACTION
+    LEA DX, MSGSUB         ;DISPLAY SUBTRACTION MESSAGE
+    MOV AH, 09H
+    INT 21H
+
+    MOV AL, NUM1
+    SUB AL, NUM2
+    ADD AL, '0'            ;CONVERT BACK TO ASCII
+    MOV DL, AL
+    MOV AH, 02H
+    INT 21H
+
+    ;MULTIPLICATION
+    LEA DX, MSGMUL         ;DISPLAY MULTIPLICATION MESSAGE
+    MOV AH, 09H
+    INT 21H
+
+    MOV AL, NUM1
+    MOV BL, NUM2
+    MUL BL                 ;AX = AL * BL
+    ADD AL, '0'            ;CONVERT BACK TO ASCII
+    MOV DL, AL
+    MOV AH, 02H
+    INT 21H
+
+    ;DIVISION
+    LEA DX, MSGDIV         ;DISPLAY DIVISION MESSAGE
+    MOV AH, 09H
+    INT 21H
+
+    MOV AL, NUM1
+    MOV BL, NUM2
+    DIV BL                 ;AL = QUOTIENT, AH = REMAINDER
+    ADD AL, '0'            ;CONVERT BACK TO ASCII
+    MOV DL, AL
+    MOV AH, 02H
+    INT 21H
+
+    ;END PROGRAM
+    MOV AH, 4CH
+    INT 21H
+
+MAIN ENDP
+END MAIN
+AH, 01H
+    INT 21H
+    SUB AL, '0'
+    MOV NUM2, AL 
+
+    ; ADDITION
+    MOV AH, 09H
+    INT 21H
+
+    MOV AL, NUM1
+    ADD AL, NUM2
+    ADD AL, '0'          ; Convert back to ASCII
+    MOV DL, AL
+    MOV AH, 02H
+    INT 21H
+
+    ; SUBTRACTION
+    LEA DX, MSGSUB
+    MOV AH, 09H
+    INT 21H
+
+    MOV AL, NUM1
+    SUB AL, NUM2
+    ADD AL, '0'
+    MOV DL, AL
+    MOV AH, 02H
+    INT 21H
+
+    ; MULTIPLICATION         
+    LEA DX, MSGMUL
+    MOV AH, 09H
+    INT 21H
+
+    MOV AL, NUM1
+    MOV BL, NUM2
+    MUL BL               ; AX = AL * BL
+    ADD AL, '0'
+    MOV DL, AL
+    MOV AH, 02H
+    INT 21H
+
+    ; DIVISION
+    LEA DX, MSGDIV
+    MOV AH, 09H
+    INT 21H
+
+    MOV AL, NUM1
+    MOV BL, NUM2
+    DIV BL               ; AL = Quotient, AH = Remainder
+    ADD AL, '0'
+    MOV DL, AL
+    MOV AH, 02H
+    INT 21H
+
+    
+    ; END PROGRAM
+    MOV AH, 4CH
+    INT 21H
+
+MAIN ENDP
+END MAIN

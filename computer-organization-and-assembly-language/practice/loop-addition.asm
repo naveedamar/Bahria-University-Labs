@@ -3,8 +3,7 @@
 .STACK 100H
 
 .DATA   
-    SUM DB ?  
-    MSG DB 'SUM: $'  
+    SUM DW 0       
        
 .CODE          
     
@@ -12,32 +11,28 @@ MAIN PROC
     MOV AX, @DATA
     MOV DS, AX   
 
-    MOV DX, OFFSET MSG
-    MOV AH, 09H
-    INT 21H
- 
     MOV CX, 10        ; loop counter
-    MOV BL, 1        ; start from 1  
-    MOV AL, 0
+    MOV BX, 1        ; start from 1  
+    MOV AX, 0
     
     SUM_LOOP:
-        ADD AL, BL      
-        INC BL
+        ADD AX, BX     
+        INC BX
     LOOP SUM_LOOP
                    
-    MOV SUM, AL
-    
-    MOV DX, OFFSET MSG
-    MOV AH, 09H
+    MOV SUM, AX    
+    MOV BX, SUM
+    MOV DL, (BX / 10) + 30H 
+    MOV AH,2     
     INT 21H
-    
-    MOV AL, SUM
-    AAM
-    
-    MOV DL, AH
-    ADD DL, 30H
+               
+    MOV DL, (BX MOD 10) + 30H 
+    MOV AH,2
+    INT 21H
     
     MOV AH, 4CH
     INT 21H   
+MAIN ENDP
+END MAIN        MAIN         21H   
 MAIN ENDP
 END MAIN        

@@ -1,0 +1,35 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    MSG DB 'Result = $'
+    NUM1 DB ?
+    NUM2 DB ?
+
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AH, 01H
+    INT 21H
+    SUB AL, '0'
+    MOV BL, AL
+
+    MOV AH, 01H
+    INT 21H
+    SUB AL, '0'
+    ADD BL, AL
+
+    MOV DX, OFFSET MSG
+    MOV AH, 09H
+    INT 21H
+
+    ADD BL, '0'
+    MOV DL, BL
+    MOV AH, 02H
+    INT 21H
+
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+END MAIN
