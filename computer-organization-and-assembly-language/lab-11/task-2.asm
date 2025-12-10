@@ -1,0 +1,81 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    VAL DB 10000001B
+    MSG1 DB 'Before ROL: $'
+    MSG2 DB 0DH, 0AH, 'After ROL:  $'
+    MSG_CF DB ' CF=$'
+
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AL, VAL
+    CLC
+    PUSHF
+    
+    LEA DX, MSG1
+    MOV AH, 09H
+    INT 21H
+    
+    POPF
+    CALL DISPLAY_BINARY_CF
+    
+    ROL AL, 1
+    PUSHF
+    
+    LEA DX, MSG2
+    MOV AH, 09H
+    INT 21H
+    
+    POPF
+    CALL DISPLAY_BINARY_CF
+
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+
+DISPLAY_BINARY_CF PROC
+    PUSHF
+    POP BP
+    
+    PUSH AX
+    PUSH BX
+    PUSH CX
+    PUSH DX
+
+    MOV CX, 8
+    MOV BL, AL
+
+PRINT_LOOP:
+    SHL BL, 1
+    JC BIT_1
+    MOV DL, '0'
+    JMP PRINT_BIT
+BIT_1:
+    MOV DL, '1'
+PRINT_BIT:
+    MOV AH, 02H
+    INT 21H
+    LOOP PRINT_LOOP
+
+    LEA DX, MSG_CF
+    MOV AH, 09H
+    INT 21H
+
+    MOV BX, BP
+    AND BX, 1
+    ADD BL, '0'
+    MOV DL, BL
+    MOV AH, 02H
+    INT 21H
+
+    POP DX
+    POP CX
+    POP BX
+    POP AX
+    RET
+DISPLAY_BINARY_CF ENDP
+
+END MAIN

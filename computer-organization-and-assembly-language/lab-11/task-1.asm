@@ -1,0 +1,81 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    MSG_ORIG DB 'Original: $'
+    MSG_ROL DB 0DH, 0AH, 'Scramble 1 (ROL 2): $'
+    MSG_ROR DB 0DH, 0AH, 'Scramble 2 (ROR 2): $'
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AL, 11000011B
+    PUSH AX
+
+    LEA DX, MSG_ORIG
+    MOV AH, 09H
+    INT 21H
+
+    POP AX
+    PUSH AX
+    CALL PRINT_BINARY
+    POP AX
+
+    MOV CL, 2
+    ROL AL, CL
+    PUSH AX
+
+    LEA DX, MSG_ROL
+    MOV AH, 09H
+    INT 21H
+
+    POP AX
+    PUSH AX
+    CALL PRINT_BINARY
+    POP AX
+
+    MOV AL, 11000011B
+    MOV CL, 2
+    ROR AL, CL
+    
+    PUSH AX
+    LEA DX, MSG_ROR
+    MOV AH, 09H
+    INT 21H
+    POP AX
+
+    CALL PRINT_BINARY
+
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+
+PRINT_BINARY PROC
+    PUSH AX
+    PUSH BX
+    PUSH CX
+    PUSH DX
+
+    MOV CX, 8
+    MOV BL, AL
+
+PRINT_BIT_LOOP:
+    SHL BL, 1
+    JC PRINT_ONE
+    MOV DL, '0'
+    JMP PRINT_CHAR
+PRINT_ONE:
+    MOV DL, '1'
+PRINT_CHAR:
+    MOV AH, 02H
+    INT 21H
+    LOOP PRINT_BIT_LOOP
+
+    POP DX
+    POP CX
+    POP BX
+    POP AX
+    RET
+PRINT_BINARY ENDP
+
+END MAIN

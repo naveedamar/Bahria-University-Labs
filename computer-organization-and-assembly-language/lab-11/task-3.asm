@@ -1,0 +1,88 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    VAL DB 11110000B
+    MSG_ITER DB 'Iteration $'
+    MSG_SEP DB ': $'
+    NEWLINE DB 0DH, 0AH, '$'
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AL, VAL
+    MOV CX, 4
+    MOV BH, 1
+
+ROTATE_LOOP:
+    ROL AL, 1
+    
+    PUSH AX
+    PUSH BX
+    PUSH CX
+    PUSH DX
+    
+    LEA DX, MSG_ITER
+    MOV AH, 09H
+    INT 21H
+
+    MOV DL, BH
+    ADD DL, '0'
+    MOV AH, 02H
+    INT 21H
+
+    LEA DX, MSG_SEP
+    MOV AH, 09H
+    INT 21H
+
+    POP DX
+    POP CX
+    POP BX
+    POP AX
+
+    CALL PRINT_BINARY
+
+    PUSH AX
+    PUSH DX
+    LEA DX, NEWLINE
+    MOV AH, 09H
+    INT 21H
+    POP DX
+    POP AX
+
+    INC BH
+    LOOP ROTATE_LOOP
+
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+
+PRINT_BINARY PROC
+    PUSH AX
+    PUSH BX
+    PUSH CX
+    PUSH DX
+
+    MOV CX, 8
+    MOV BL, AL
+
+PRINT_BIT_LOOP:
+    SHL BL, 1
+    JC PRINT_ONE
+    MOV DL, '0'
+    JMP PRINT_CHAR
+PRINT_ONE:
+    MOV DL, '1'
+PRINT_CHAR:
+    MOV AH, 02H
+    INT 21H
+    LOOP PRINT_BIT_LOOP
+
+    POP DX
+    POP CX
+    POP BX
+    POP AX
+    RET
+PRINT_BINARY ENDP
+
+END MAIN
