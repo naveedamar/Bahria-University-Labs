@@ -1,0 +1,70 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    MSG_RESULT DB 'Result: $'
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AX, 15
+    PUSH AX
+    MOV AX, 25
+    PUSH AX
+
+    POP BX
+    POP AX
+    ADD AX, BX
+    PUSH AX
+
+    MOV AX, 2
+    PUSH AX
+
+    POP BX
+    POP AX
+    MUL BX
+    PUSH AX
+
+    LEA DX, MSG_RESULT
+    MOV AH, 09H
+    INT 21H
+
+    POP AX
+    CALL PRINT_NUM
+
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+
+PRINT_NUM PROC
+    PUSH AX
+    PUSH BX
+    PUSH CX
+    PUSH DX
+
+    MOV CX, 0
+    MOV BX, 10
+
+DIV_LOOP:
+    XOR DX, DX
+    DIV BX
+    PUSH DX
+    INC CX
+    CMP AX, 0
+    JNE DIV_LOOP
+
+PRINT_LOOP:
+    POP DX
+    ADD DL, '0'
+    MOV AH, 02H
+    INT 21H
+    LOOP PRINT_LOOP
+
+    POP DX
+    POP CX
+    POP BX
+    POP AX
+    RET
+PRINT_NUM ENDP
+
+END MAIN

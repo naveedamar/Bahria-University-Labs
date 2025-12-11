@@ -1,0 +1,101 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    MSG_BEFORE DB 'Before Swap: AX=$'
+    MSG_BX DB ' BX=$'
+    MSG_AFTER DB 0DH, 0AH, 'After Swap: AX=$'
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AX, 100
+    MOV BX, 200
+
+    PUSH AX
+    PUSH BX
+    LEA DX, MSG_BEFORE
+    MOV AH, 09H
+    INT 21H
+    POP BX
+    POP AX
+
+    CALL PRINT_NUM
+
+    PUSH AX
+    PUSH BX
+    LEA DX, MSG_BX
+    MOV AH, 09H
+    INT 21H
+    POP BX
+    POP AX
+
+    PUSH AX
+    MOV AX, BX
+    CALL PRINT_NUM
+    POP AX
+
+    PUSH AX
+    PUSH BX
+    POP AX
+    POP BX
+
+    PUSH AX
+    PUSH BX
+    LEA DX, MSG_AFTER
+    MOV AH, 09H
+    INT 21H
+    POP BX
+    POP AX
+
+    CALL PRINT_NUM
+
+    PUSH AX
+    PUSH BX
+    LEA DX, MSG_BX
+    MOV AH, 09H
+    INT 21H
+    POP BX
+    POP AX
+
+    PUSH AX
+    MOV AX, BX
+    CALL PRINT_NUM
+    POP AX
+
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+
+PRINT_NUM PROC
+    PUSH AX
+    PUSH BX
+    PUSH CX
+    PUSH DX
+
+    MOV CX, 0
+    MOV BX, 10
+
+DIV_LOOP:
+    XOR DX, DX
+    DIV BX
+    PUSH DX
+    INC CX
+    CMP AX, 0
+    JNE DIV_LOOP
+
+PRINT_LOOP:
+    POP DX
+    ADD DL, '0'
+    MOV AH, 02H
+    INT 21H
+    LOOP PRINT_LOOP
+
+    POP DX
+    POP CX
+    POP BX
+    POP AX
+    RET
+PRINT_NUM ENDP
+
+END MAIN

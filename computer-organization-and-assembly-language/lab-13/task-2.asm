@@ -1,0 +1,36 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    INPUT_STR DB 'ABC'
+    MSG_REV DB 'Reversed: $'
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+
+    LEA SI, INPUT_STR
+    MOV CX, 3
+
+PUSH_LOOP:
+    MOV AL, [SI]
+    MOV AH, 0
+    PUSH AX
+    INC SI
+    LOOP PUSH_LOOP
+
+    LEA DX, MSG_REV
+    MOV AH, 09H
+    INT 21H
+
+    MOV CX, 3
+
+POP_LOOP:
+    POP DX
+    MOV AH, 02H
+    INT 21H
+    LOOP POP_LOOP
+
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+END MAIN

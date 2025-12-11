@@ -1,0 +1,96 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+    MSG_VISIT DB 'Visited Page: $'
+    MSG_BACK DB 'Back to Page: $'
+    NEWLINE DB 0DH, 0AH, '$'
+.CODE
+MAIN PROC
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AX, 101
+    PUSH AX
+    LEA DX, MSG_VISIT
+    MOV AH, 09H
+    INT 21H
+    MOV AX, 101
+    CALL PRINT_NUM
+    LEA DX, NEWLINE
+    MOV AH, 09H
+    INT 21H
+
+    MOV AX, 102
+    PUSH AX
+    LEA DX, MSG_VISIT
+    MOV AH, 09H
+    INT 21H
+    MOV AX, 102
+    CALL PRINT_NUM
+    LEA DX, NEWLINE
+    MOV AH, 09H
+    INT 21H
+
+    MOV AX, 103
+    PUSH AX
+    LEA DX, MSG_VISIT
+    MOV AH, 09H
+    INT 21H
+    MOV AX, 103
+    CALL PRINT_NUM
+    LEA DX, NEWLINE
+    MOV AH, 09H
+    INT 21H
+    INT 21H
+
+    MOV CX, 3
+
+BACK_LOOP:
+    LEA DX, MSG_BACK
+    MOV AH, 09H
+    INT 21H
+
+    POP AX
+    CALL PRINT_NUM
+
+    LEA DX, NEWLINE
+    MOV AH, 09H
+    INT 21H
+    LOOP BACK_LOOP
+
+    MOV AH, 4CH
+    INT 21H
+MAIN ENDP
+
+PRINT_NUM PROC
+    PUSH AX
+    PUSH BX
+    PUSH CX
+    PUSH DX
+
+    MOV CX, 0
+    MOV BX, 10
+
+DIV_LOOP:
+    XOR DX, DX
+    DIV BX
+    PUSH DX
+    INC CX
+    CMP AX, 0
+    JNE DIV_LOOP
+
+PRINT_LOOP:
+    POP DX
+    ADD DL, '0'
+    MOV AH, 02H
+    INT 21H
+    LOOP PRINT_LOOP
+
+    POP DX
+    POP CX
+    POP BX
+    POP AX
+    RET
+PRINT_NUM ENDP
+
+END MAIN
