@@ -4,6 +4,8 @@ This directory contains my lab work and assignments for the Operating Systems co
 The goal is to understand how an operating system manages processes, memory, files and hardware resources efficiently, while also learning how to use the terminal and basic scripting.
 The main purpose of this directory is to track and organize all lab tasks throughout the semester.
 
+> **Note:** Labs 1 through 5 are not included in this repository as they covered basic terminology and introductory terminal commands.
+
 ---
 
 ## 📚 Topics Covered
@@ -22,13 +24,6 @@ The main purpose of this directory is to track and organize all lab tasks throug
 
 ---
 
-## ⚙️ Tools & Environment
-
-* Programming Language: C / Pseudocode (as required in labs)
-* Platform: Linux / Windows (as specified)
-
----
-
 ## 🚀 Purpose
 
 This folder is maintained for:
@@ -36,3 +31,11 @@ This folder is maintained for:
 1. Lab Tasks
 2. Assignments
 3. Practice Problems
+
+---
+
+## ⚙️ Tools & Environment
+
+* **Programming Language:** Python (primarily), C (for specific assignments)
+* **Platform:** Ubuntu Linux
+
