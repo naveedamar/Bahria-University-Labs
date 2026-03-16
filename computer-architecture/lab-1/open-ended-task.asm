@@ -4,10 +4,10 @@
 .text
 .globl main
 main:
-    lw $a0, my_number
-    
+
     li $v0, 1
+    lw $a0, my_number
     syscall
-    
+
     li $v0, 10
     syscall
