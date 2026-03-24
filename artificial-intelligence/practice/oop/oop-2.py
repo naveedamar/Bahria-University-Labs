@@ -3,7 +3,7 @@ key lessons:
 1. what is self, how to use it
 2. encapsulation, can be done by using _ prefix on attributes like: _password and _email ,this will not make it private,
     as _ prefixed attributes are by convention considered private by developers,
-        2.1 if we want to really to make it private user __email ie: using double underscores,
+        2.1 if we want to really make it private user __email ie: using double underscores,
             python will do name mangling ie: python will change name of the attribute to deny access outside of the class
 """
 
