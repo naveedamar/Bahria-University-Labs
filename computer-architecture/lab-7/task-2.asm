@@ -1,3 +1,4 @@
+; Taking user input for a name and printing a personalized greeting
 .data
 buffer: .space 50
 prompt: .asciiz "Enter your name: "

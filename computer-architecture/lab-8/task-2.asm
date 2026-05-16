@@ -1,3 +1,4 @@
+; Taking two integers as input and computing their quotient and remainder
 .data
     msgQ: .asciiz "\nQuotient: "
     msgR: .asciiz "\nRemainder: "

@@ -1,3 +1,4 @@
+; Printing a welcome message string to console using syscall
 .data
 msg: .asciiz "Welcome to MIPS Assembly Programming!\n"
 

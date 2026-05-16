@@ -1,3 +1,4 @@
+; Multiplying and dividing a number by 2 using bitwise left and right shifts
 .data
 msgM: .asciiz "Multiplied by 2: "
 msgD: .asciiz "\nDivided by 2: "

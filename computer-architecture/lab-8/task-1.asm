@@ -1,3 +1,4 @@
+; Taking two integers as input and printing their product
 .data
 .text
 .globl main

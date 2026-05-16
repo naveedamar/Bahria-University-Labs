@@ -1,3 +1,4 @@
+; Performing various bitwise operations (masking, toggling, shifting) on user input
 .data
 prompt: .asciiz "Enter an 8-bit integer: "
 msg_upper: .asciiz "\nUpper 4 bits: "

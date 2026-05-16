@@ -1,3 +1,4 @@
+; Calculating a number raised to a power recursively
 .text
 .globl main
 main:

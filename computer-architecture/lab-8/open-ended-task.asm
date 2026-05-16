@@ -1,3 +1,4 @@
+; Taking two integers as input and computing their product, quotient, and remainder
 .data
     prompt: .asciiz "Enter two integers:\n"
     pMsg:   .asciiz "Product: "

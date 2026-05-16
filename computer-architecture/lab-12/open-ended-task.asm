@@ -1,3 +1,4 @@
+; Accessing an array of car structs using an offset calculated from user input
 .data
 cars:
     .word 202, 2018, 1300

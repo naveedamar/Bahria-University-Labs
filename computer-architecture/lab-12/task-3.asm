@@ -1,3 +1,4 @@
+; Accessing an array of student structs based on user selection
 .data
 students:
     .word 1001, 20, 35

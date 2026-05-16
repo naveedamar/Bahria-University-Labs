@@ -1,3 +1,4 @@
+; Defining and accessing a simple student struct with ID, age, and GPA
 .data
 student:
     .word 1023

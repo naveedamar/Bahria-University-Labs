@@ -1,3 +1,4 @@
+; Counting the number of characters in a predefined string using a loop
 .data
 str: .asciiz "Assembly is fun!"
 msg: .asciiz "Number of characters: "

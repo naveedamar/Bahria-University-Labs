@@ -1,3 +1,4 @@
+; Defining a procedure to calculate the sum of elements in an array
 .data
 my_array: .word 5, 10, 15, 20, 25
 n_val:    .word 5

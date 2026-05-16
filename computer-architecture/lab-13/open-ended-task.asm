@@ -1,3 +1,4 @@
+; Comparing the performance of summing a large array using a standard loop versus a 4x unrolled loop
 .data
 arr: .word 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 msg_norm: .asciiz "Sum (Normal): "

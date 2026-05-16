@@ -1,3 +1,4 @@
+; Summing an array by manually unrolling the loop to reduce branching overhead
 .data
 msg: .asciiz "Sum using loop unrolling: "
 arr: .word 2,4,6,8,10,12,14,16

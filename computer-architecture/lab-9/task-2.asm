@@ -1,3 +1,4 @@
+; Defining a procedure to add two numbers passed as arguments
 .text
 .globl main
 main:

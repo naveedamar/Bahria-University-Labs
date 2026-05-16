@@ -1,3 +1,4 @@
+; Summing an array utilizing a simplified pointer update loop structure
 .data
 msg: .asciiz "Sum using strength reduction: "
 arr: .word 5, 10, 15, 20, 25

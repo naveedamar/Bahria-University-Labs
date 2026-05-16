@@ -1,3 +1,4 @@
+; Implementing a basic calculator using a switch-case equivalent for addition, subtraction, and multiplication
 .data
 menu: .asciiz "1.Add 2.Sub 3.Mul > "
 msgA: .asciiz "Enter A: "

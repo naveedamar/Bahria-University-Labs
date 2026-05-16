@@ -1,3 +1,4 @@
+; Defining a simple procedure to print a passed number
 .text
 .globl main
 main:

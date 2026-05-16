@@ -1,3 +1,4 @@
+; Counting the total number of vowels in a user-provided string
 .data
     prompt:  .asciiz "Enter a sentence (up to 100 chars): "
     result:  .asciiz "Total vowel count: "

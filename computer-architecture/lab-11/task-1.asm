@@ -1,3 +1,4 @@
+; Masking to extract the lower 4 bits of a hexadecimal number
 .data
 msg: .asciiz "Lower 4 bits: "
 

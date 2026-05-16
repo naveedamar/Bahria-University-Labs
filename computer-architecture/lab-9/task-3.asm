@@ -1,3 +1,4 @@
+; Defining a recursive procedure to calculate the factorial of a number
 .text
 .globl main
 main:

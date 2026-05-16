@@ -1,3 +1,4 @@
+; Calculating the factorial of a number using recursion
 .text
 .globl main
 main:

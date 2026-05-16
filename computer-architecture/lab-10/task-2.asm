@@ -1,3 +1,4 @@
+; Calculating the nth Fibonacci number using recursion
 .text
 .globl main
 main:

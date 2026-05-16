@@ -1,3 +1,4 @@
+; Determining if an input integer is even or odd
 .data
     msgE: .asciiz "Even\n"
     msgO: .asciiz "Odd\n"

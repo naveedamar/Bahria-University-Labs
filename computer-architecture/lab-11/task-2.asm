@@ -1,3 +1,4 @@
+; Using bitwise OR to set the 2nd bit of a number
 .data
 msg2: .asciiz "Value after setting bit 2: "
 
