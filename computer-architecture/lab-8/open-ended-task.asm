@@ -1,25 +1,20 @@
 .data
-prompt1: .asciiz "Enter first integer: "
-prompt2: .asciiz "Enter second integer: "
-msg_prod: .asciiz "Product: "
-msg_quot: .asciiz "\nQuotient: "
-msg_rem: .asciiz "\nRemainder: "
+    prompt: .asciiz "Enter two integers:\n"
+    pMsg:   .asciiz "Product: "
+    qMsg:   .asciiz "\nQuotient: "
+    rMsg:   .asciiz "\nRemainder: "
 
 .text
 .globl main
 main:
     li $v0, 4
-    la $a0, prompt1
+    la $a0, prompt
     syscall
-    
+
     li $v0, 5
     syscall
     move $t0, $v0
 
-    li $v0, 4
-    la $a0, prompt2
-    syscall
-    
     li $v0, 5
     syscall
     move $t1, $v0
@@ -32,25 +27,22 @@ main:
     mfhi $t4
 
     li $v0, 4
-    la $a0, msg_prod
+    la $a0, pMsg
     syscall
-    
     move $a0, $t2
     li $v0, 1
     syscall
 
     li $v0, 4
-    la $a0, msg_quot
+    la $a0, qMsg
     syscall
-    
     move $a0, $t3
     li $v0, 1
     syscall
 
     li $v0, 4
-    la $a0, msg_rem
+    la $a0, rMsg
     syscall
-    
     move $a0, $t4
     li $v0, 1
     syscall
