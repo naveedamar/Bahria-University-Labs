@@ -1,5 +1,5 @@
 """
-Apply for Stanford Code in Place 06 as a section leader and using this script to create demo teaching video for the role.
+Applying for Stanford Code in Place 06 as a section leader and using this script to create demo teaching video for the role.
 
 Problem statement:
 Convert weight on Earth to equivalent weight on Mars
