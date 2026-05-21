@@ -1,0 +1,6 @@
+Initial file content.
+hello from class 5a
+@.....infected.....@
+This is the first added line of the payload.
+This is the second added line of the payload.
+This is the third added line of the payload.
