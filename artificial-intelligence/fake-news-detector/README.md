@@ -14,24 +14,33 @@ Paste any news article or headline into the app. The model analyzes the text and
 - Scikit-learn (TF-IDF + Logistic Regression)
 - Pandas
 - Joblib
+- Kagglehub
 
-## Dataset
-WELFake Dataset — 72,134 labeled news articles from 4 sources (Kaggle, McIntire, Reuters, BuzzFeed).
+## Datasets
+- [WELFake Dataset](https://www.kaggle.com/datasets/vcclab/welfake-dataset) — 72,134 articles
+- [Fake and Real News Dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset) — 44,898 articles
+- Combined: 116,993 labeled news articles
 
-Download: [WELFake Dataset on Kaggle](https://www.kaggle.com/datasets/vcclab/welfake-dataset)
-
-Or run the following to download automatically:
+Datasets are not included in the repo due to file size. Run the following to download them automatically via Kagglehub:
 ```bash
 python dataset.py
 ```
+
+Make sure your Kaggle API credentials are configured before running. See [Kaggle API setup](https://www.kaggle.com/docs/api).
+
 ## Model Accuracy
-93.9% on the test set.
+95.4% on the test set.
 
 ## Setup
 
 Install dependencies:
 ```bash
-pip install streamlit scikit-learn pandas joblib python-dotenv
+pip install streamlit scikit-learn pandas joblib python-dotenv kagglehub
+```
+
+Download the datasets:
+```bash
+python dataset.py
 ```
 
 Train the model:
