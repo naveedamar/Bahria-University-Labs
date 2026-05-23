@@ -33,4 +33,8 @@ database-management-systems/BAHRIA-DBMS/.vs/BAHRIA-DBMS/v17/.suo
 /database-management-systems
 data-structures-and-algorithms/final/finals.cpp
 artificial-intelligence/lab-8/.env
-/artificial-intelligence/fake-news-detector
+artificial-intelligence/fake-news-detector/vectorizer.pkl
+artificial-intelligence/fake-news-detector/vectorizer.pkl
+artificial-intelligence/fake-news-detector/model.pkl
+artificial-intelligence/fake-news-detector/vectorizer.pkl
+artificial-intelligence/fake-news-detector/model.pkl
