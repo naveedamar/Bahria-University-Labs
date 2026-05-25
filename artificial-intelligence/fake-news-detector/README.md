@@ -2,6 +2,9 @@
 
 An AI-powered web application that classifies news articles as Real or Fake using Machine Learning.
 
+**Live Demo:** [fake-news-detector.streamlit.app](https://naveedamar-artificial-intelligencefake-news-detectorapp-qq8tom.streamlit.app/)
+
+
 ## Disclaimer
 This model is trained on US political news from 2015–2018. It may misclassify articles from other regions, languages, or time periods. It detects writing patterns — it does not fact-check.
 
