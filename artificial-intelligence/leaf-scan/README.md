@@ -2,4 +2,4 @@
 
 This project has moved to its own repository.
 
-➡️ [github.com/naveedamar/leaf-scan](https://github.com/naveedamar/leaf-scan)
+[github.com/naveedamar/leaf-scan](https://github.com/naveedamar/leaf-scan)
